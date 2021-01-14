@@ -1,4 +1,4 @@
-import "./App.css";
+// import "./App.css";
 
 import React, { useEffect, useState } from "react";
 
@@ -6,6 +6,13 @@ import Header from "./components/Header";
 import Photo from "./components/Photo";
 import Title from "./components/Title";
 import axios from "axios";
+import styled from "styled-components";
+
+const AppStyles = styled.div` 
+  margin: 0 auto;
+  text-align: center;
+  max-width: 960px;
+`
 
 function App() {
   const [title, setTitle] = useState("")
@@ -28,11 +35,11 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
+    <AppStyles className="App">
       <Header />
       <Photo url={url} />
       <Title title={title}/>
-    </div>
+    </AppStyles>
   );
 }
 
